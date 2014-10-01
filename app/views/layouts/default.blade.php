@@ -29,10 +29,10 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">PHP-ShockPot :O</h3>
+              <h3 class="masthead-brand"><a href="{{ action('HoneypotController@getIndex') }}">:O PHP-ShockPot</a></h3>
               <ul class="nav masthead-nav">
-                <li class="active"><a href="{{ action('HoneypotController@getShock') }}">Home</a></li>
-                <li><a href="{{ action('StatsController@getAll') }}">Stats</a></li>
+                <li @if (!Request::is('s/*'))class="active" @endif><a href="{{ action('HoneypotController@getIndex') }}">Home</a></li>
+                <li @if (Request::is('s/*'))class="active" @endif><a href="{{ action('StatsController@getAll') }}">Stats</a></li>
               </ul>
             </div>
           </div>
@@ -43,7 +43,9 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p>PHP-ShockPot "Shellshock" honeypot. <a href="https://github.com/leonjza/PHP-ShockPot">PHP-ShockPot @Github</a>, by <a href="https://twitter.com/leonjza">@leonjza</a>.</p>
+              <p>PHP-ShockPot "Shellshock" honeypot.
+                <a href="https://github.com/leonjza/PHP-ShockPot">PHP-ShockPot @Github</a>,
+                by <a href="https://twitter.com/leonjza">@leonjza</a> - {{ e(Request::url()) }}</p>
             </div>
           </div>
 
@@ -53,6 +55,7 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>

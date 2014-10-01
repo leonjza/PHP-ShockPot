@@ -17,6 +17,7 @@ class StatsController extends BaseController {
 
 		// Get the attempts and eager load the suspect headers
 		$attempts = Attempt::with(array('suspect_headers'))
+			->orderBy('id', 'desc')
 			->paginate(20);
 
 		return View::make('stats')

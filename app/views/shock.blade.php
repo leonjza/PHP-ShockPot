@@ -15,7 +15,7 @@
   <ul class="list-unstyled">
   	@foreach($detections as $header)
   		<li>
-  			<pre>{{ $header }}: {{ $headers[$header][0] }}</pre>
+  			<pre>{{ e($header) }}: {{ e($headers[$header][0]) }}</pre>
   		</li>
   	@endforeach
   </ul>
@@ -25,6 +25,6 @@
 
 <br>
 <p class="text-center">
-  <img src="https://pbs.twimg.com/media/ByXw51ZIcAATTKu.png:large">
+  <img src="https://pbs.twimg.com/media/ByXw51ZIcAATTKu.png:large" class="img-rounded">
 </p>
 @stop

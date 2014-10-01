@@ -17,6 +17,7 @@ class CreateAttemptsTable extends Migration {
 			$table->increments('id');
 
 			$table->string('remote_ip', 45);
+			$table->string('requested_url', 255);
 
 			$table->timestamps();
 		});

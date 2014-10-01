@@ -51,6 +51,13 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+// 404 handler. We match everything and route to the HoneypotController
+App::missing(function($exception)
+{
+    return App::make('HoneypotController')
+        ->callAction('getIndex', array(200));
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

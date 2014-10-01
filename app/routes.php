@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/', 'HoneypotController@getShock');
-Route::controller('/stats', 'StatsController');
+Route::controller('s', 'StatsController');
+Route::controller('/', 'HoneypotController');

@@ -12,7 +12,7 @@ class HoneypotController extends BaseController {
 	|
 	*/
 
-	public function getShock()
+	public function getIndex()
 	{
 
 		$shocking = array();
@@ -29,6 +29,7 @@ class HoneypotController extends BaseController {
 			// Record the attempt
 			$attempt = new Attempt;
 			$attempt->remote_ip = Request::getClientIp();
+			$attempt->requested_url = str_limit(Request::url(), 147, '...');
 			$attempt->save();
 
 			// Record the full request headers
