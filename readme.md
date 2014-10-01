@@ -2,7 +2,7 @@
 
 ![bashbug](https://pbs.twimg.com/media/ByXw51ZIcAATTKu.png:large)
 
-PHP-ShockPot is a small honeypot aimed at showing you the interesting attempts made trying to exploit your host using the now famous ["Shellshock"](http://en.wikipedia.org/wiki/Shellshock_(software_bug) (also known as bashbug) bug.
+PHP-ShockPot is a small honeypot aimed at showing you the interesting attempts made trying to exploit your host using the now famous ["Shellshock"](http://en.wikipedia.org/wiki/Shellshock_(software_bug)) (also known as bashbug) bug.
 
 ### Installation
 Installation should be relatively fast.
