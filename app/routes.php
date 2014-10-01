@@ -12,4 +12,4 @@
 */
 
 Route::get('/', 'HoneypotController@getShock');
-Route::get('/stats', 'StatsController@getShock');
+Route::controller('/stats', 'StatsController');

@@ -4,19 +4,33 @@ class StatsController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Honeypot Controller
+	| Stats Controller
 	|--------------------------------------------------------------------------
 	|
-	| This controller handles the requests to your server and tries to identify
-	| ones that have "bashbug" / "shellshock" related requests in them.
+	| This controller handles the viewing of statics and details about attempts
+	| to the honeypot
 	|
 	*/
 
-	public function getShock()
+	public function getAll()
 	{
 
+		// Get the attempts and eager load the suspect headers
+		$attempts = Attempt::with(array('suspect_headers'))
+			->paginate(20);
+
 		return View::make('stats')
-			->with('headers', Request::header());
+			->with('attempts', $attempts);
+	}
+
+	public function getView($id)
+	{
+
+		$details = Attempt::with('full_headers')->findOrFail($id);
+
+		return View::make('details')
+			->with('details', $details)
+			->with('full_headers', json_decode($details->full_headers->headers));
 	}
 
 }

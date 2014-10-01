@@ -2,6 +2,11 @@
 
 @section('page_content')
 
+<div class="inner cover">
+  <h1 class="cover-heading">PHP-ShockPot</h1>
+  <p class="lead">Try a "ShellShock" request to this Honeypot.</p>
+</div>
+
 @if (count($detections) > 0)
 <div class="">
   <h1><p class="text-danger">Shellshock exploit attempt detected!</p></h1>
@@ -18,4 +23,8 @@
 </div>
 @endif
 
+<br>
+<p class="text-center">
+  <img src="https://pbs.twimg.com/media/ByXw51ZIcAATTKu.png:large">
+</p>
 @stop
