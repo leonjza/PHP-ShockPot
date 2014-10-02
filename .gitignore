@@ -2,7 +2,6 @@
 .env.*.php
 .env.php
 /vendor
-/app/database/production.sqlite
 composer.phar
 composer.lock
 .DS_Store
