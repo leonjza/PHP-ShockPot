@@ -29,9 +29,9 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand"><a href="{{ action('HoneypotController@getIndex') }}">:O PHP-ShockPot</a></h3>
+              <h3 class="masthead-brand"><a href="{{ action('HoneypotController@anyIndex') }}">:O PHP-ShockPot</a></h3>
               <ul class="nav masthead-nav">
-                <li @if (!Request::is('s/*'))class="active" @endif><a href="{{ action('HoneypotController@getIndex') }}">Home</a></li>
+                <li @if (!Request::is('s/*'))class="active" @endif><a href="{{ action('HoneypotController@anyIndex') }}">Home</a></li>
                 <li @if (Request::is('s/*'))class="active" @endif><a href="{{ action('StatsController@getAll') }}">Stats</a></li>
               </ul>
             </div>

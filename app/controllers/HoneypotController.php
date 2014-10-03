@@ -12,7 +12,7 @@ class HoneypotController extends BaseController {
 	|
 	*/
 
-	public function getIndex()
+	public function anyIndex()
 	{
 
 		$shocking = array();
